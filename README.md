@@ -85,7 +85,9 @@ The integration tests clear user and reading rows in the configured test databas
 
 ## Screenshots
 
-The `screenshots/` directory is reserved for assignment screenshots. Capture the dashboard, history, and reports after starting the app and signing in.
+![Sweety login page](screenshots/login.png)
+
+The screenshot is from the running React application. The dashboard, history, and report screens can be viewed after starting PostgreSQL, applying the migration, seeding the demo account, and signing in.
 
 ## Assumptions, limitations, and future work
 
