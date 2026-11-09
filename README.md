@@ -50,7 +50,7 @@ npm run db:seed
 npm run dev
 ```
 
-The API runs on port 5000 and Vite on port 5173. Run the client and API together from the repository root with `npm run dev`. To run separately, use `npm run dev --prefix server` and `npm run dev --prefix client`. The API health check is `GET /api/health`.
+The API runs on port 5001 by default and Vite on port 5173. Set `PORT` in `.env` to use another available API port. If the API port is busy, the server prints a short message suggesting this setting. Run the client and API together from the repository root with `npm run dev`. To run separately, use `npm run dev --prefix server` and `npm run dev --prefix client`. The API health check is `GET /api/health`.
 
 `npm run db:migrate` applies the idempotent initial schema. `npm run db:seed` creates/updates the demo user and replaces that user's sample readings (safe to run again). Demo login: `demo@sweety.com` / `Demo@12345`.
 
