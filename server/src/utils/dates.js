@@ -1,0 +1,3 @@
+export function isValidDate(s) { if (!/^\d{4}-\d{2}-\d{2}$/.test(s || '')) return false; const d = new Date(`${s}T00:00:00Z`); return !Number.isNaN(d.valueOf()) && d.toISOString().slice(0,10) === s; }
+export function today() { const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+export function bounds(date, mode) { const [y,m] = date.split('-').map(Number); if (mode === 'daily') return [date, date]; if (mode === 'mtd') return [`${date.slice(0,7)}-01`, date]; const first = new Date(Date.UTC(y,m-2,1)); const last = new Date(Date.UTC(y,m-1,0)); return [first.toISOString().slice(0,10),last.toISOString().slice(0,10)]; }
