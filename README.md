@@ -83,6 +83,15 @@ npm test
 
 The integration tests clear user and reading rows in the configured test database. Never point `TEST_DATABASE_URL` at a database containing data you need.
 
+## Troubleshooting
+
+- `DATABASE_UNAVAILABLE` / connection refused: start PostgreSQL, create `sweety_db`, set a valid `DATABASE_URL` in the root `.env`, then restart the API.
+- `DATABASE_NOT_FOUND`: the database name in `DATABASE_URL` has not been created.
+- `DATABASE_AUTH_FAILED`: update the username/password in `DATABASE_URL` to match your PostgreSQL setup.
+- `DATABASE_NOT_MIGRATED`: run `npm run db:migrate`, then `npm run db:seed` to create the demo account.
+
+The API health endpoint is a liveness check and can respond while PostgreSQL is down. Login and reading/report endpoints need a working database.
+
 ## Screenshots
 
 ![Sweety login page](screenshots/login.png)
